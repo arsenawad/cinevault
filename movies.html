@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Movies — CineVault</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== NAVBAR (shared across all pages) ===================== -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark site-navbar sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">CineVault</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="movies.html">Explore Movies</a></li>
+            <li class="nav-item"><a class="nav-link" href="database.html">My Favourites</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container py-5">
+    <h1 class="section-title">Explore by Genre</h1>
+    <p class="text-muted mb-4">Live data from The Movie Database (TMDB).</p>
+
+    <!-- ===================== SEARCH BAR ===================== -->
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <label for="searchInput" class="form-label visually-hidden">Search movies</label>
+        <input type="search" id="searchInput" class="form-control search-input" placeholder="Search by title…">
+      </div>
+    </div>
+
+    <!-- ===================== GENRE FILTER ("ticket stub" signature element) ===================== -->
+    <!-- TODO: populated dynamically by JS from TMDB's /genre/movie/list endpoint.
+         Each genre renders as a clickable "ticket stub" button (multi-select toggle). -->
+    <div id="genreFilters" class="genre-ticket-row mb-4" role="group" aria-label="Filter by genre">
+      <button type="button" class="genre-ticket" data-genre-id="28">Action</button>
+      <button type="button" class="genre-ticket" data-genre-id="35">Comedy</button>
+      <button type="button" class="genre-ticket" data-genre-id="18">Drama</button>
+      <button type="button" class="genre-ticket" data-genre-id="27">Horror</button>
+      <button type="button" class="genre-ticket" data-genre-id="878">Sci-Fi</button>
+      <button type="button" class="genre-ticket" data-genre-id="16">Animation</button>
+      <button type="button" class="genre-ticket" data-genre-id="10749">Romance</button>
+      <button type="button" class="genre-ticket" data-genre-id="53">Thriller</button>
+    </div>
+
+    <!-- ===================== STATE CONTAINERS ===================== -->
+    <div id="loadingState" class="state-message d-none">
+      <div class="spinner-border" role="status"><span class="visually-hidden">Loading…</span></div>
+      <p>Loading movies…</p>
+    </div>
+
+    <div id="errorState" class="state-message d-none">
+      <p>Something went wrong while fetching movies. <button id="retryBtn" class="btn btn-sm btn-outline-light">Retry</button></p>
+    </div>
+
+    <div id="emptyState" class="state-message d-none">
+      <p>No movies match your search or filters. Try adjusting them.</p>
+    </div>
+
+    <!-- ===================== MOVIE GRID ===================== -->
+    <div id="movieGrid" class="row g-4">
+      <!-- JS will inject movie cards here -->
+    </div>
+
+    <!-- ===================== PAGINATION ===================== -->
+    <nav aria-label="Movie results pages" class="mt-5">
+      <ul class="pagination justify-content-center" id="pagination">
+        <!-- JS will inject Prev / page numbers / Next here -->
+      </ul>
+    </nav>
+  </main>
+
+  <!-- ===================== MOVIE DETAIL MODAL ===================== -->
+  <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content curated-modal">
+        <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+        <div class="modal-backdrop-img" id="modalBackdrop"></div>
+        <div class="modal-body-content">
+          <div class="modal-poster-wrap">
+            <img id="modalPoster" src="" alt="">
+          </div>
+          <div class="modal-info">
+            <span id="modalGenre" class="curated-genre-tag"></span>
+            <h2 id="modalTitle" class="modal-movie-title"></h2>
+            <div class="modal-meta">
+              <span id="modalYear"></span>
+              <span id="modalRating" class="modal-rating"></span>
+              <span id="modalRuntime"></span>
+            </div>
+            <p id="modalOverview" class="modal-overview"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== FOOTER (shared) ===================== -->
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p class="mb-0">&copy; 2026 CineVault — Built by Arsen Awad. Data via TMDB.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/tmdbApi.js"></script>
+  <script src="js/movieModal.js"></script>
+  <script src="js/movieRenderer.js"></script>
+  <script src="js/movieApp.js"></script>
+</body>
+</html>

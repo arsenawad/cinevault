@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Favourites — CineVault</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark site-navbar sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">CineVault</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="movies.html">Explore Movies</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="database.html">My Favourites</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container py-5">
+    <h1 class="section-title">My Favourites</h1>
+    <p style="color:var(--text-sub)" class="mb-4">A personal collection of films across every genre — movies I'd recommend to anyone, anytime.</p>
+
+    <!-- GENRE TABS -->
+    <ul class="nav nav-tabs mb-4" id="curatedTabs" role="tablist">
+      <li class="nav-item"><button class="nav-link active" type="button">All</button></li>
+      <li class="nav-item"><button class="nav-link" type="button">Comedy</button></li>
+      <li class="nav-item"><button class="nav-link" type="button">Animation</button></li>
+      <li class="nav-item"><button class="nav-link" type="button">Action</button></li>
+      <li class="nav-item"><button class="nav-link" type="button">Horror</button></li>
+      <li class="nav-item"><button class="nav-link" type="button">Sci-Fi</button></li>
+      <li class="nav-item"><button class="nav-link" type="button">Romance</button></li>
+      <li class="nav-item"><button class="nav-link" type="button">Thriller</button></li>
+      <li class="nav-item"><button class="nav-link" type="button">Drama</button></li>
+    </ul>
+
+    <!-- MOVIE GRID — 15 items, poster loaded by curatedApp.js -->
+    <div class="row g-4" id="curatedGrid">
+
+      <div class="col-md-4 col-sm-6 curated-col" data-tmdb-id="302699">
+        <div class="card curated-card h-100">
+          <div class="curated-poster-wrap">
+            <img class="curated-poster" src="" alt="Central Intelligence poster" loading="lazy">
+            <div class="curated-poster-overlay"><span>View Details</span></div>
+          </div>
+          <div class="card-body">
+            <span class="curated-genre-tag">Comedy</span>
+            <h3 class="curated-title">Central Intelligence (2016)</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 curated-col" data-tmdb-id="587807">
+        <div class="card curated-card h-100">
+          <div class="curated-poster-wrap">
+            <img class="curated-poster" src="" alt="Tom and Jerry poster" loading="lazy">
+            <div class="curated-poster-overlay"><span>View Details</span></div>
+          </div>
+          <div class="card-body">
+            <span class="curated-genre-tag">Animation</span>
+            <h3 class="curated-title">Tom and Jerry (2021)</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 curated-col" data-tmdb-id="174349">
+        <div class="card curated-card h-100">
+          <div class="curated-poster-wrap">
+            <img class="curated-poster" src="" alt="Need for Speed poster" loading="lazy">
+            <div class="curated-poster-overlay"><span>View Details</span></div>
+          </div>
+          <div class="card-body">
+            <span class="curated-genre-tag">Action</span>
+            <h3 class="curated-title">Need for Speed (2014)</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 curated-col" data-tmdb-id="18785">
+        <div class="card curated-card h-100">
+          <div class="curated-poster-wrap">
+            <img class="curated-poster" src="" alt="The Hangover poster" loading="lazy">
+            <div class="curated-poster-overlay"><span>View Details</span></div>
+          </div>
+          <div class="card-body">
+            <span class="curated-genre-tag">Comedy</span>
+            <h3 class="curated-title">The Hangover (2009)</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 curated-col" data-tmdb-id="20352">
+        <div class="card curated-card h-100">
+          <div class="curated-poster-wrap">
+            <img class="curated-poster" src="" alt="Despicable Me poster" loading="lazy">
+            <div class="curated-poster-overlay"><span>View Details</span></div>
+          </div>
+          <div class="card-body">
+            <span class="curated-genre-tag">Animation</span>
+            <h3 class="curated-title">Despicable Me (2010)</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 curated-col" data-tmdb-id="168259">
+        <div class="card curated-card h-100">
+          <div class="curated-poster-wrap">
+            <img class="curated-poster" src="" alt="Furious 7 poster" loading="lazy">
+            <div class="curated-poster-overlay"><span>View Details</span></div>
+          </div>
+          <div class="card-body">
+            <span class="curated-genre-tag">Action</span>
+            <h3 class="curated-title">Fast & Furious 7 (2015)</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 curated-col" data-tmdb-id="419430">
+        <div class="card curated-card h-100">
+          <div class="curated-poster-wrap">
+            <img class="curated-poster" src="" alt="Get Out poster" loading="lazy">
+            <div class="curated-poster-overlay"><span>View Details</span></div>
+          </div>
+          <div class="card-body">
+            <span class="curated-genre-tag">Horror</span>
+            <h3 class="curated-title">Get Out (2017)</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 curated-col" data-tmdb-id="447332">
+        <div class="card curated-card h-100">
+          <div class="curated-poster-wrap">
+            <img class="curated-poster" src="" alt="A Quiet Place poster" loading="lazy">
+            <div class="curated-poster-overlay"><span>View Details</span></div>
+          </div>
+          <div class="card-body">
+            <span class="curated-genre-tag">Horror</span>
+            <h3 class="curated-title">A Quiet Place (2018)</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 curated-col" data-tmdb-id="157336">
+        <div class="card curated-card h-100">
+          <div class="curated-poster-wrap">
+            <img class="curated-poster" src="" alt="Interstellar poster" loading="lazy">
+            <div class="curated-poster-overlay"><span>View Details</span></div>
+          </div>
+          <div class="card-body">
+            <span class="curated-genre-tag">Sci-Fi</span>
+            <h3 class="curated-title">Interstellar (2014)</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 curated-col" data-tmdb-id="286217">
+        <div class="card curated-card h-100">
+          <div class="curated-poster-wrap">
+            <img class="curated-poster" src="" alt="The Martian poster" loading="lazy">
+            <div class="curated-poster-overlay"><span>View Details</span></div>
+          </div>
+          <div class="card-body">
+            <span class="curated-genre-tag">Sci-Fi</span>
+            <h3 class="curated-title">The Martian (2015)</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 curated-col" data-tmdb-id="11036">
+        <div class="card curated-card h-100">
+          <div class="curated-poster-wrap">
+            <img class="curated-poster" src="" alt="The Notebook poster" loading="lazy">
+            <div class="curated-poster-overlay"><span>View Details</span></div>
+          </div>
+          <div class="card-body">
+            <span class="curated-genre-tag">Romance</span>
+            <h3 class="curated-title">The Notebook (2004)</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 curated-col" data-tmdb-id="65759">
+        <div class="card curated-card h-100">
+          <div class="curated-poster-wrap">
+            <img class="curated-poster" src="" alt="Crazy Stupid Love poster" loading="lazy">
+            <div class="curated-poster-overlay"><span>View Details</span></div>
+          </div>
+          <div class="card-body">
+            <span class="curated-genre-tag">Romance</span>
+            <h3 class="curated-title">Crazy, Stupid, Love (2011)</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 curated-col" data-tmdb-id="210577">
+        <div class="card curated-card h-100">
+          <div class="curated-poster-wrap">
+            <img class="curated-poster" src="" alt="Gone Girl poster" loading="lazy">
+            <div class="curated-poster-overlay"><span>View Details</span></div>
+          </div>
+          <div class="card-body">
+            <span class="curated-genre-tag">Thriller</span>
+            <h3 class="curated-title">Gone Girl (2014)</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 curated-col" data-tmdb-id="146233">
+        <div class="card curated-card h-100">
+          <div class="curated-poster-wrap">
+            <img class="curated-poster" src="" alt="Prisoners poster" loading="lazy">
+            <div class="curated-poster-overlay"><span>View Details</span></div>
+          </div>
+          <div class="card-body">
+            <span class="curated-genre-tag">Thriller</span>
+            <h3 class="curated-title">Prisoners (2013)</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 curated-col" data-tmdb-id="1402">
+        <div class="card curated-card h-100">
+          <div class="curated-poster-wrap">
+            <img class="curated-poster" src="" alt="The Pursuit of Happyness poster" loading="lazy">
+            <div class="curated-poster-overlay"><span>View Details</span></div>
+          </div>
+          <div class="card-body">
+            <span class="curated-genre-tag">Drama</span>
+            <h3 class="curated-title">The Pursuit of Happyness (2006)</h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- MOVIE DETAIL MODAL -->
+  <div class="modal fade" id="movieModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content curated-modal">
+        <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+        <div class="modal-backdrop-img" id="modalBackdrop"></div>
+        <div class="modal-body-content">
+          <div class="modal-poster-wrap">
+            <img id="modalPoster" src="" alt="">
+          </div>
+          <div class="modal-info">
+            <span id="modalGenre" class="curated-genre-tag"></span>
+            <h2 id="modalTitle" class="modal-movie-title"></h2>
+            <div class="modal-meta">
+              <span id="modalYear"></span>
+              <span id="modalRating" class="modal-rating"></span>
+              <span id="modalRuntime"></span>
+            </div>
+            <p id="modalDesc" class="modal-desc"></p>
+            <p id="modalOverview" class="modal-overview"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p class="mb-0">&copy; 2026 CineVault — Built by Arsen Awad. Data via TMDB.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/curatedFilter.js"></script>
+  <script src="js/curatedApp.js"></script>
+</body>
+</html>

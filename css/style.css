@@ -1,0 +1,534 @@
+/* =====================================================
+   CineVault — Global Styles
+   Tokens:
+     --bg:       #0A0A0F
+     --bg-alt:   #13131A
+     --bg-card:  #1A1A24
+     --gold:     #D9A441
+     --gold-dim: #8C6A2A
+     --text:     #FFFFFF
+     --text-sub: #C0C0CC
+     --text-muted: #7A7A8A
+   ===================================================== */
+
+:root {
+  --bg:         #0A0A0F;
+  --bg-alt:     #13131A;
+  --bg-card:    #1A1A24;
+  --gold:       #D9A441;
+  --gold-dim:   #8C6A2A;
+  --text:       #FFFFFF;
+  --text-sub:   #C0C0CC;
+  --text-muted: #7A7A8A;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+h1, h2, h3, h4, .hero-title, .section-title, .modal-movie-title {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.03em;
+}
+
+/* ---------- Navbar ---------- */
+.site-navbar {
+  background-color: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(217, 164, 65, 0.15);
+}
+.site-navbar .navbar-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.7rem;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+.site-navbar .nav-link          { color: var(--text-sub); font-size: 0.95rem; }
+.site-navbar .nav-link.active,
+.site-navbar .nav-link:hover    { color: var(--gold); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.04);
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(10,10,15,0.92) 0%,
+    rgba(10,10,15,0.75) 55%,
+    rgba(10,10,15,0.35) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.hero-title {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 1.0;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+.hero-sub {
+  color: var(--text-sub);
+  font-size: 1.05rem;
+  max-width: 34rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.btn-marquee {
+  background-color: var(--gold);
+  color: #0A0A0F;
+  font-weight: 700;
+  padding: 0.8rem 2rem;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  display: inline-block;
+  transition: background 0.2s;
+}
+.btn-marquee:hover { background-color: #fff; color: #0A0A0F; }
+.btn-outline-hero {
+  border: 1px solid rgba(255,255,255,0.4);
+  color: var(--text);
+  background: transparent;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, color 0.2s;
+  display: inline-block;
+}
+.btn-outline-hero:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ---------- Stats strip ---------- */
+.stats-strip {
+  background-color: var(--bg-alt);
+  border-top: 1px solid rgba(217,164,65,0.15);
+  border-bottom: 1px solid rgba(217,164,65,0.15);
+  padding: 2rem 0;
+}
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0 1rem;
+}
+.stat-item + .stat-item { border-left: 1px solid rgba(255,255,255,0.08); }
+.stat-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  color: var(--gold);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ---------- How it works ---------- */
+.how-card {
+  padding: 2rem 1.5rem;
+  background-color: var(--bg-card);
+  border: 1px solid rgba(217,164,65,0.12);
+  border-radius: 6px;
+  height: 100%;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.how-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+.how-icon   { font-size: 2.5rem; margin-bottom: 1rem; }
+.how-title  { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--text); margin-bottom: 0.5rem; }
+.how-desc   { color: var(--text-sub); font-size: 0.9rem; line-height: 1.6; margin: 0; }
+
+/* ---------- Section titles ---------- */
+.section-title { font-size: 2.4rem; color: var(--text); }
+.genre-sub     { color: var(--text-muted); font-size: 0.95rem; }
+
+/* ---------- Genres grid ---------- */
+.genres-section { background-color: var(--bg-alt); }
+.genres-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 768px) { .genres-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.genre-block {
+  position: relative;
+  height: 120px;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.2s;
+}
+.genre-block::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,15,0.85), rgba(10,10,15,0.2));
+}
+.genre-block:hover { transform: scale(1.03); }
+.genre-block-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.05em;
+}
+
+/* Genre block tint colours (no external images needed) */
+.genre-action     { background: linear-gradient(135deg, #1a0a0a, #4a1010); }
+.genre-comedy     { background: linear-gradient(135deg, #1a1500, #4a3800); }
+.genre-horror     { background: linear-gradient(135deg, #0a0a1a, #1a0a3a); }
+.genre-scifi      { background: linear-gradient(135deg, #001a1a, #003a3a); }
+.genre-drama      { background: linear-gradient(135deg, #0a0a0a, #2a2a2a); }
+.genre-animation  { background: linear-gradient(135deg, #0a1a00, #1a3a00); }
+.genre-romance    { background: linear-gradient(135deg, #1a0010, #3a0025); }
+.genre-thriller   { background: linear-gradient(135deg, #100a00, #2a1800); }
+
+/* ---------- Testimonials ---------- */
+.testimonials-section { background-color: var(--bg); }
+.testimonial-card {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(217,164,65,0.15);
+  border-radius: 6px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.testimonial-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+.quote-mark {
+  font-family: Georgia, serif;
+  font-size: 3rem;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.testimonial-quote {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+.testimonial-author   { display: flex; flex-direction: column; gap: 0.15rem; }
+.author-name          { color: var(--gold); font-weight: 600; font-size: 0.95rem; }
+.author-role          { color: var(--text-muted); font-size: 0.82rem; }
+
+/* ---------- CTA banner ---------- */
+.cta-banner {
+  background: linear-gradient(135deg, var(--bg-alt), rgba(217,164,65,0.06));
+  border-top: 1px solid rgba(217,164,65,0.15);
+  border-bottom: 1px solid rgba(217,164,65,0.15);
+  padding: 4rem 0;
+}
+.cta-title { font-size: 2.2rem; color: var(--text); }
+
+/* ---------- Genre filter tickets (movies page) ---------- */
+.genre-ticket-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.genre-ticket {
+  background-color: var(--bg-card);
+  border: 1px dashed var(--gold-dim);
+  color: var(--text-sub);
+  padding: 0.4rem 1rem;
+  border-radius: 3px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.genre-ticket.active {
+  border-color: var(--gold);
+  color: var(--gold);
+  background-color: rgba(217,164,65,0.1);
+}
+
+/* ---------- Search input ---------- */
+.search-input {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(217,164,65,0.2);
+  color: var(--text);
+  border-radius: 3px;
+}
+.search-input:focus {
+  background-color: var(--bg-card);
+  border-color: var(--gold);
+  color: var(--text);
+  box-shadow: 0 0 0 3px rgba(217,164,65,0.1);
+}
+.search-input::placeholder { color: var(--text-muted); }
+
+/* ---------- State messages ---------- */
+.state-message {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--text-muted);
+}
+
+/* ---------- Movie cards (Explore page) ---------- */
+.movie-card {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(217,164,65,0.12);
+  border-radius: 6px;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.movie-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+.movie-card > img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  display: block;
+}
+.movie-card .curated-poster-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  aspect-ratio: 2 / 3;
+  background: rgba(10,10,15,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.movie-card:hover .curated-poster-overlay { opacity: 1; }
+.movie-card-body  { padding: 0.75rem; }
+.movie-card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+}
+.movie-card-meta  { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-muted); }
+.movie-card-rating { color: var(--gold); font-weight: 600; }
+.no-poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background-color: var(--bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ---------- Pagination ---------- */
+.pagination .page-link {
+  background-color: var(--bg-card);
+  border-color: rgba(217,164,65,0.2);
+  color: var(--text-muted);
+}
+.pagination .page-item.active .page-link,
+.pagination .page-link.active-page {
+  background-color: var(--gold) !important;
+  border-color: var(--gold) !important;
+  color: var(--bg) !important;
+}
+.pagination .page-link:hover { color: var(--gold); }
+
+/* ---------- Tabs (My Favourites page) ---------- */
+.nav-tabs { border-bottom-color: rgba(217,164,65,0.2); }
+.nav-tabs .nav-link {
+  color: var(--text-muted);
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+}
+.nav-tabs .nav-link.active {
+  background-color: transparent !important;
+  color: var(--gold) !important;
+  border-bottom: 2px solid var(--gold);
+}
+.nav-tabs .nav-link:hover { color: var(--text-sub); }
+
+/* ---------- Curated / Favourites cards ---------- */
+.curated-card {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(217,164,65,0.12);
+  overflow: hidden;
+  border-radius: 6px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.curated-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+.curated-poster-wrap { position: relative; overflow: hidden; }
+.curated-poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  display: block;
+  background-color: var(--bg-alt);
+}
+.curated-poster-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,10,15,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.curated-poster-overlay span {
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  border: 1px solid var(--gold);
+  padding: 0.45rem 1.1rem;
+  border-radius: 3px;
+}
+.curated-card:hover .curated-poster-overlay { opacity: 1; }
+.curated-genre-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+.curated-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.15rem;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ---------- Genre showcase (about section) ---------- */
+.genre-showcase { display: flex; flex-wrap: wrap; gap: 0.75rem; padding: 1rem 0; }
+.gs-tag {
+  padding: 0.45rem 1.1rem;
+  border: 1px dashed var(--gold-dim);
+  border-radius: 3px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.gs-tag.gs-highlight { border-color: var(--gold); color: var(--gold); background: rgba(217,164,65,0.08); }
+
+/* ---------- Netflix-style modal ---------- */
+.curated-modal {
+  background-color: var(--bg-alt);
+  border: 1px solid rgba(217,164,65,0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+.modal-close-btn {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: rgba(10,10,15,0.85);
+  border: none;
+  color: var(--text);
+  font-size: 1.4rem;
+  width: 2.2rem; height: 2.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-close-btn:hover { color: var(--gold); }
+.modal-backdrop-img {
+  width: 100%;
+  height: 220px;
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+  background-color: var(--bg);
+}
+.modal-backdrop-img::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 130px;
+  background: linear-gradient(to bottom, transparent, var(--bg-alt));
+}
+.modal-body-content {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 1.5rem 1.75rem;
+  margin-top: -80px;
+  position: relative;
+  z-index: 2;
+}
+.modal-poster-wrap { flex-shrink: 0; width: 130px; }
+.modal-poster-wrap img {
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid rgba(217,164,65,0.25);
+  display: block;
+}
+.modal-info { flex: 1; padding-top: 4.5rem; }
+.modal-movie-title {
+  font-size: 1.9rem;
+  color: var(--text);
+  margin: 0.2rem 0 0.5rem;
+}
+.modal-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.modal-rating  { color: var(--gold); font-weight: 600; }
+.modal-desc    { color: var(--text); font-size: 0.93rem; margin-bottom: 0.6rem; font-style: italic; line-height: 1.6; }
+.modal-overview { color: var(--text-sub); font-size: 0.87rem; line-height: 1.65; }
+
+@media (max-width: 576px) {
+  .modal-body-content { flex-direction: column; margin-top: -30px; }
+  .modal-poster-wrap  { width: 90px; }
+  .modal-info         { padding-top: 0.5rem; }
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background-color: var(--bg-alt);
+  color: var(--text-muted);
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(217,164,65,0.1);
+  font-size: 0.83rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.8rem; }
+  .stat-number { font-size: 1.6rem; }
+}
