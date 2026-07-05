@@ -69,8 +69,8 @@ Located on `index.html` in the `#testimonials` section. Six Bootstrap `.card` co
 
 ## Deployment
 
-- **Live URL:** `[paste your Netlify/Vercel/GitHub Pages URL here]`
-- **GitHub Repository:** `[paste your GitHub repo URL here]`
+- **Live URL:** `[https://cinevault-asren.netlify.app/]`
+- **GitHub Repository:** `[https://github.com/arsenawad/cinevault]`
 
 ---
 
